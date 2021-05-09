@@ -1,0 +1,15 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Weather {
+  """temperate in graus celsius"""
+  temperature: String!
+
+  """weather description"""
+  description: String
+}
+
+type Query {
+  weather(city: String!): Weather!
+}
