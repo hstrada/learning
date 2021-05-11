@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherService {
-  constructor(private http: HttpService) {}
+  constructor(private readonly http: HttpService) {}
 
   async getWeather(city: string): Promise<any> {
     return this.http

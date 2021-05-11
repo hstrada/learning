@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
+import { HttpModule } from '@nestjs/common/http';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { WeatherModule } from './weather/weather.module';
 
 @Module({
   imports: [
+    HttpModule,
     WeatherModule,
     GraphQLModule.forRoot({
       debug: false,
@@ -13,7 +13,7 @@ import { WeatherModule } from './weather/weather.module';
       autoSchemaFile: 'schema.gql',
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
