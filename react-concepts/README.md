@@ -2,14 +2,16 @@
 
 React concepts
 
-## Available Scripts
+# Book
+Learning React, 2nd Edition, by Eve Porcello; Alex Banks
 
-In the project directory, you can run:
+Published by O'Reilly Media, Inc., 2020
 
-### `yarn start`
+[O'Reilly](https://www.oreilly.com/library/view/learning-react-2nd/9781492051718/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description
+
+Learning React creates another dimension about some react ideas and how to use the best of it. It contains concepts about: js, hooks, data, webpack, context api and more.
 
 # Concepts
 
