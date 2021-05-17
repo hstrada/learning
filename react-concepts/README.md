@@ -18,6 +18,7 @@ Learning React creates another dimension about some react ideas and how to use t
 - [js](#js)
 - [useEffect](#useEffect)
 - [useReducer](#useReducer)
+- [red, green, refactor](#red&green&refactor)
 
 ## js
 
@@ -84,3 +85,5 @@ function Numbers() {
   return <h1 onClick={() => setNumber(1)}>{number}</h1>;
 }
 ```
+
+## red&green&refactor
