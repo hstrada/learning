@@ -11,7 +11,7 @@ Published by O'Reilly Media, Inc., 2020
 
 ## Description
 
-Learning React creates another dimension about some react ideas and how to use the best of it. It contains concepts about: js, hooks, data, webpack, context api and more.
+Learning React creates another dimension about some react ideas and how to use the best of it. It contains concepts about: js, hooks, data, webpack, context api, eslint and more.
 
 # Concepts
 
