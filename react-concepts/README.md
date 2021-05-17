@@ -11,29 +11,59 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Concepts
 
-### Code Splitting
+- [useEffect](#useEffect)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## js
 
-### Analyzing the Bundle Size
+```js
+const person = {
+  type: 'person',
+  data: {
+    gender: 'female',
+    info: {
+      id: 28,
+      fullname: {
+        first: 'Helena',
+        last: 'Road',
+      },
+    },
+  },
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const deepPick = (fields, object = {}) => {
+  const [first, ...remaining] = fields.split('.');
+  console.log(first, ...remaining);
+  return remaining.length
+    ? deepPick(remaining.join('.'), object[first])
+    : object[first];
+};
 
-### Making a Progressive Web App
+console.log(deepPick('data.info.fullname.last', person))
+// road
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## useEffect
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+function App() {
+  const [count, setCount] = React.useState(0);
+  React.useEffect(() => {
+    // onmount
+    const interval = setTimeout(() => {
+      setCount(count + 1);
+    }, 1000);
+    return () => {
+      // clear unmount
+      clearInterval(interval);
+    };
+    // looking for something to change
+  }, [count]);
+  return (
+    <div>
+      <p>{count}</p>
+    </div>
+  );
+}
+```
