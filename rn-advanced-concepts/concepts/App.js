@@ -1,20 +1,73 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Card } from './components/Card';
 
+const DATA = [
+  {
+    id: 1,
+    text: 'Card #1',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg',
+  },
+  {
+    id: 2,
+    text: 'Card #2',
+    uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg',
+  },
+  {
+    id: 3,
+    text: 'Card #3',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg',
+  },
+  {
+    id: 4,
+    text: 'Card #4',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg',
+  },
+  {
+    id: 5,
+    text: 'Card #5',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg',
+  },
+  {
+    id: 6,
+    text: 'Card #6',
+    uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg',
+  },
+  {
+    id: 7,
+    text: 'Card #7',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg',
+  },
+  {
+    id: 8,
+    text: 'Card #8',
+    uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg',
+  },
+];
+
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Card />
+  const renderCard = (item) => (
+    <View style={styles.card}>
+      <Text>{item.text}</Text>
+      <TouchableOpacity>
+        <Text>Visualizar</Text>
+      </TouchableOpacity>
     </View>
+  );
+
+  return (
+    <>
+      <View>
+        <Card renderCard={renderCard} data={DATA} />
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  card: {
+    backgroundColor: 'red',
+    width: '100%',
+    height: 150,
   },
 });
